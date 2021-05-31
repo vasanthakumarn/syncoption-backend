@@ -28,8 +28,8 @@ app.get('/statsdata', (req, res) => {
 /**
  * LISTEN FOR REQUESTS
  */
-const httpServer = app.listen(process.env.port || port, () => {
-    console.log("SyncOption backend started in Port ", port, "process.env.port", process.env.port);
+const httpServer = app.listen(process.env.PORT || port, () => {
+    console.log("SyncOption backend started in Port ", port, "process.env.port", process.env.PORT);
 });
 
 /**
