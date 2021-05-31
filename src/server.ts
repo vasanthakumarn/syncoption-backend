@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const port = 3000;
 const app = express();
-app.use(cors({origin: '*'}));
+app.use(cors());
 
 /**
  * MARKET DATA API END POINT AND SEND RESPONSE AFTER 10SECONDS
@@ -28,8 +28,8 @@ app.get('/statsdata', (req, res) => {
 /**
  * LISTEN FOR REQUESTS
  */
-const httpServer = app.listen(port, () => {
-    console.log("SyncOption backend started in Port ", port);
+const httpServer = app.listen(process.env.port || port, () => {
+    console.log("SyncOption backend started in Port ", port, "process.env.port", process.env.port);
 });
 
 /**
